@@ -36,3 +36,17 @@ navToggle.addEventListener("click", function() {
     headerEl.style.transitionDelay = "0ms"
   }
 });
+
+const trackScroll= document.querySelector(".track-scroll");
+const circle = document.querySelector("circle")
+
+window.addEventListener("scroll", () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+
+    const scrollPercentage = scrollPosition / totalHeight;
+
+    const offsetValue = -128 * scrollPercentage;
+    trackScroll.textContent = Math.floor(scrollPercentage * 100)+"%"
+    circle.style.strokeDashoffset = `${offsetValue}px`;
+});

@@ -838,6 +838,41 @@ h3 span{
   top: 0;
 }
 
+.circle-fixed{
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+}
+ 
+circle{
+  fill: none;
+  stroke: #435d34;
+  stroke-width: 4;
+  stroke-dasharray: 200, 200;
+  stroke-dashoffset: 0px;
+  stroke-linecap: round;
+}
+
+.track-cont{
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  transform-origin: center;
+  left: 90%;
+  top: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track-scroll{
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  transform-origin: center;
+  display: block;
+}
+
 .contact2{
   margin-top: 2rem;
   text-align: center;
@@ -958,6 +993,12 @@ h3 span{
   }
 }
 
+@media all and (max-width: 1023px){
+  .track-cont{
+      transform: translate(-50%,-50%);
+  }
+}
+
 @media screen and (max-width: 500px){
   .project-cont{
     grid-template-columns: 1fr;
@@ -975,6 +1016,10 @@ h3 span{
   .skill-cont section::after{
     background-color: #fafafa0c;
   }
+
+  .track-cont{
+    transform: translate(-70%,-50%);
+}
 }
 
 @media screen and (min-width: 768px){
